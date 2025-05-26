@@ -8,14 +8,18 @@ class Solution {
         // Your code here
         int i,j,temp;
         int n=arr.size();
-        for(i=1;i<n;i++){
-            for(j=1;j<n;j++){
-                if(arr[j]<arr[j-1]){
+        int count=0;
+        for(i=0;i<n;i++){
+            for(j=0;j<n-1;j++){
+                if(arr[j]>arr[j+1]){
                     temp=arr[j];
-                    arr[j]=arr[j-1];
-                    arr[j-1]=temp;
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                    count=1;
                 }
             }
+            if(count=0)
+            break;
         }
     }
 };
